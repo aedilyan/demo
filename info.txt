@@ -5,7 +5,14 @@ git add .
 git commit -m "some comment"
 git push
 
-1. package - npm package http://prntscr.com/n91pam
-2. dev web server - express http://prntscr.com/n91pmm
-3. automation - npm scripts  http://prntscr.com/n91pvj
+//npm
+npm uninstall babel
+npm install --save-dev babel-cli
+npm install -g babel-cli
+
+1. package - npm package / http://prntscr.com/n91pam
+2. dev web server - express / http://prntscr.com/n91pmm
+3. automation - npm scripts / http://prntscr.com/n91pvj
+4. transpiler - babel / http://prntscr.com/n98vnw
+
 
