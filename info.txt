@@ -1,0 +1,11 @@
+git clone https://github.com/aedilyan/demo.git
+
+//push changes
+git add .
+git commit -m "some comment"
+git push
+
+1. package - npm package http://prntscr.com/n91pam
+2. dev web server - express http://prntscr.com/n91pmm
+3. automation - npm scripts  http://prntscr.com/n91pvj
+
