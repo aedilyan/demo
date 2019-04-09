@@ -2,9 +2,6 @@ import path from 'path';
 
 module.exports = {
     mode: 'development',
-    debug: true,
-    target: 'web',
-    noInfo: false,
     devtool: 'inline-source-map',
     entry: {
         app: path.resolve(__dirname, 'src/index.js'),
@@ -17,9 +14,8 @@ module.exports = {
     },
     plugins: [],
     module: {
-        loaders: [
-            { test: /\.js$/, exclude: /node_modules/, loaders: ['babel'] },
-            { test: /\.css$/, loaders: ['style', 'css'] }
+        rules: [
+            { test: /\.css$/, use: 'css-loader' }
         ]
     }
 };
