@@ -4,6 +4,7 @@ git clone https://github.com/aedilyan/demo.git
 git add .
 git commit -m "some comment"
 git push
+git pull
 
 //npm 
 npm uninstall babel
