@@ -2,9 +2,8 @@
     "name": "my-demo-package",
     "version": "1.0.0",
     "scripts": {
-        "prestart": "babel-node buildScripts/startMessage.js",
         "start": "npm-run-all --parallel open:src",
-        "open:src": "babel-node buildScripts/srcServer.js"
+        "open:src": "babel-node srcServer.js"
     },
     "dependencies": {
         "express": "^4.16.4",
