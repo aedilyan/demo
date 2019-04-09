@@ -15,5 +15,6 @@ npm install -g babel-cli
 2. dev web server - express / http://prntscr.com/n91pmm
 3. automation - npm scripts / http://prntscr.com/n91pvj
 4. transpiler - babel / http://prntscr.com/n98vnw
-
+5. module format - ES6 / http://prntscr.com/n9es3m http://prntscr.com/n9esfm
+6. bundling - webpack / http://prntscr.com/n9et8f http://prntscr.com/n9et1s
 
