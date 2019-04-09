@@ -8,9 +8,8 @@ module.exports = {
         utils: path.resolve(__dirname, 'src/utils.js'),
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        publicPath: '/',
-        filename: '[name].js'
+        filename: '[name].js',
+        path: __dirname + '/dist'
     },
     plugins: [],
     module: {
