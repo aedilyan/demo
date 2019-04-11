@@ -13,7 +13,8 @@ module.exports = {
     plugins: [],
     module: {
         rules: [
-            { test: /\.css$/, use: 'css-loader' }
+            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+            { test: /\.css$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader', options: { modules: true } }] }
         ]
     }
 };
