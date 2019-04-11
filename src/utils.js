@@ -1,1 +1,4 @@
-console.log('utils');
+
+export default {
+    value: 5
+};
