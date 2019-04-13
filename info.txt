@@ -18,4 +18,8 @@ npm install -g babel-cli
 5. module format - ES6 / http://prntscr.com/n9es3m http://prntscr.com/n9esfm
 6. bundling - webpack / http://prntscr.com/n9et8f http://prntscr.com/n9et1s
 7. linting - ESLint / http://prntscr.com/nahubn
+8. testing - mocha / http://prntscr.com/nbe9jz
+9. mock data --
+10. production
+    a. 
 
