@@ -1,5 +1,5 @@
 import path from 'path';
-import webpack from 'webpack';
+//import webpack from 'webpack';
 
 export default {
     mode: 'development',
@@ -13,14 +13,17 @@ export default {
     },
     plugins: [
         //Eliminate duplicate packages
-        new webpack.optimize.DedupePlugin(),
+       // new webpack.optimize.DedupePlugin(),
         //Minify JS
-        new webpack.optimize.UglifyJsPlugin()
+       // new webpack.optimize.UglifyJsPlugin()
     ],
     module: {
         rules: [
             { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
             { test: /\.css$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader', options: { modules: true } }] }
         ]
+    },
+    optimization: {
+        minimize: true
     }
 };

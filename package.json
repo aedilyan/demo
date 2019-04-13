@@ -6,7 +6,13 @@
         "start": "npm-run-all --parallel open:src lint:watch",
         "open:src": "babel-node buildScripts/srcServer.js",
         "lint": "esw webpack.config.* src buildScripts --color",
-        "lint:watch": "npm run lint -- --watch"
+        "lint:watch": "npm run lint -- --watch",
+        
+        "clean-dist":"rimraf ./dist && mkdir dist",
+        "prebuild":"npm-run-all clean-dist lint",
+        "build":"babel-node buildScripts/build.js",
+        "postbuild": "babel-node buildScripts/distServer.js"
+
     },
     "dependencies": {
         "react": "^16.8.6",
