@@ -24,4 +24,5 @@ npm install -g babel-cli
     a. dynamic html generation
     b. bundle splitting
     c. cache busting with MD5 hash
+    d. extract and minify css to separate file
 
