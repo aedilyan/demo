@@ -21,5 +21,7 @@ npm install -g babel-cli
 8. testing - mocha / http://prntscr.com/nbe9jz
 9. mock data --
 10. production
-    a. 
+    a. dynamic html generation
+    b. bundle splitting
+    c. cache busting with MD5 hash
 
