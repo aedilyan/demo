@@ -56,7 +56,17 @@ export default {
                     },
                     'css-loader',
                 ]
-            }
+            },
+            {
+                test: /\.less$/,
+                use: [{
+                  loader: MiniCssExtractPlugin.loader // creates style nodes from JS strings
+                }, {
+                  loader: 'css-loader' // translates CSS into CommonJS
+                }, {
+                  loader: 'less-loader' // compiles Less to CSS
+                }]
+              }
         ]
     },
     optimization: {

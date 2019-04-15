@@ -1,3 +1,5 @@
+course 1: https://app.pluralsight.com/library/courses/javascript-development-environment/table-of-contents
+course 2: https://app.pluralsight.com/library/courses/webpack-fundamentals/table-of-contents
 git clone https://github.com/aedilyan/demo.git
 
 //push changes
@@ -25,4 +27,5 @@ npm install -g babel-cli
     b. bundle splitting
     c. cache busting with MD5 hash
     d. extract and minify css to separate file
+    e. error logging ? / http://prntscr.com/nc1qxc
 
