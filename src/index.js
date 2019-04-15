@@ -1,5 +1,5 @@
-import './site.css';
-import './site2.less';
+import './styles/site.css';
+import './styles/site2.less';
 //import './reactElem';
 import util from './utils';
 import {

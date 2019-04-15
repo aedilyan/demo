@@ -1,3 +1,3 @@
 /*inport all libraries*/
 
-import fetch from 'whatwg-fetch';
+//import fetch from 'whatwg-fetch';
