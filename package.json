@@ -13,16 +13,17 @@
         "postbuild": "babel-node buildScripts/distServer.js"
     },
     "dependencies": {
+        "webpack-hot-middleware": "^2.24.3",
         "whatwg-fetch": "^3.0.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.4.3",
-        "@babel/preset-env": "^7.4.3",
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.3",
         "babel-eslint": "^10.0.1",
-        "babel-loader": "^8.0.5",
+        "babel-loader": "^7.1.5",
+        "babel-polyfill": "^6.26.0",
         "babel-preset-latest": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
         "babel-register": "^6.26.0",
         "chalk": "^2.4.2",
         "compression": "^1.7.4",
@@ -44,12 +45,13 @@
         "optimize-css-assets-webpack-plugin": "^5.0.1",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
+        "react-hot-loader": "^4.8.4",
         "style-loader": "^0.23.1",
         "terser-webpack-plugin": "^1.2.3",
         "url-loader": "^1.1.2",
         "webpack": "^4.29.6",
         "webpack-dev-middleware": "^3.6.2",
-        "webpack-hot-middleware": "^2.24.3",
+        "webpack-dev-server": "^3.3.1",
         "webpack-md5-hash": "0.0.6"
     }
 }

@@ -1,4 +1,5 @@
 import path from 'path';
+import webpack from 'webpack';
 
 export default {
     mode: 'development',
@@ -10,7 +11,15 @@ export default {
         filename: 'bundle.js',
         path: __dirname + '/src'
     },
-    plugins: [],
+    devServer: {
+        hot: true,
+        historyApiFallback: {
+          index: '/src/index.html'
+        }
+      }, 
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()        
+    ],
     module: {
         rules: [{
                 test: /\.js$/,

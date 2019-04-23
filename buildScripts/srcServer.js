@@ -13,6 +13,7 @@ app.use(express.static('src'));
 app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: config.output.publicPath
 }))
+app.use(require('webpack-hot-middleware')(compiler))
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../src/index.html'));
@@ -20,7 +21,7 @@ app.get('/', function (req, res) {
 
 app.get('/users', function (req, res) {
     res.json([
-        {id: 1, name:'jon'},
+        {id: 1, name:'Jon'},
         {id: 2, name:'kate'}
     ]);
 });

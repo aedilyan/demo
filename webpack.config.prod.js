@@ -27,7 +27,7 @@ export default {
         new WebpackMD5Hash(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            inject: 'head',
+            inject: 'body',
             meta: {
                 viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
             }
