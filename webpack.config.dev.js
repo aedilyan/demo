@@ -1,24 +1,30 @@
 import path from 'path';
 import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
     mode: 'development',
     devtool: 'inline-source-map',
     entry: {
-        app: path.resolve(__dirname, 'src')
+        app: path.resolve(__dirname, 'src/index')
     },
     output: {
         filename: 'bundle.js',
-        path: __dirname + '/src'
+        path: __dirname + '/dist'
     },
     devServer: {
         hot: true,
         historyApiFallback: {
-          index: '/src/index.html'
+            index: '/src/index.html'
         }
-      }, 
+    },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()        
+        new HtmlWebpackPlugin({
+            inject: 'body',
+            template: './src/index.html',
+            filename: './dist/index.html'
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     module: {
         rules: [{
