@@ -10,7 +10,8 @@ export default {
     },
     output: {
         filename: 'bundle.js',
-        path: __dirname + '/dist'
+        path: __dirname + '/dist',
+        publicPath: '/'
     },
     devServer: {
         hot: true
