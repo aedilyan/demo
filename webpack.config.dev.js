@@ -1,28 +1,37 @@
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
 
 export default {
     mode: 'development',
     devtool: 'inline-source-map',
     entry: {
-        app: path.resolve(__dirname, 'src/index')
+        libs: path.resolve(__dirname, 'src/libs'),
+        main: path.resolve(__dirname, 'src/index')
     },
     output: {
-        filename: 'bundle.js',
-        path: __dirname + '/dist',
+        filename: '[name].js',
+        path: path.join(__dirname, 'static'),
         publicPath: '/'
     },
     devServer: {
+        contentBase: './static',
         hot: true
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            inject: 'body',
-            template: './src/index.html',
-            filename: './dist/index.html'
+        //Generate an external css file
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css',
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new HtmlWebpackPlugin({ // Also generate a test.html
+            filename: 'index.html',
+            template: 'src/index.html'
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin()
     ],
     module: {
         rules: [{
