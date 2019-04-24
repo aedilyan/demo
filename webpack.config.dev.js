@@ -13,10 +13,7 @@ export default {
         path: __dirname + '/dist'
     },
     devServer: {
-        hot: true,
-        historyApiFallback: {
-            index: '/src/index.html'
-        }
+        hot: true
     },
     plugins: [
         new HtmlWebpackPlugin({
