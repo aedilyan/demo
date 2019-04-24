@@ -1,18 +1,13 @@
-import path from 'path';
-// import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import merge from 'webpack-merge';
+import common from './webpack.config.common';
 import WebpackMD5Hash from 'webpack-md5-hash';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserJSPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
-export default {
+export default merge(common, {
     mode: 'production',
     devtool: 'source-map',
-    entry: {
-        libs: path.resolve(__dirname, 'src/libs'),
-        main: path.resolve(__dirname, 'src/index')
-    },
     output: {
         filename: '[name].[chunkhash].js',
         path: __dirname + '/dist'
@@ -24,57 +19,8 @@ export default {
             chunkFilename: '[id].[hash].css',
         }),
         //hash the file using MD5 so that their name change when the code changes
-        new WebpackMD5Hash(),
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            inject: 'body',
-            meta: {
-                viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-            }
-        })
+        new WebpackMD5Hash()
     ],
-    module: {
-        rules: [{
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader'
-            },
-            {
-                test: /\.html$/,
-                loader: 'html-loader',
-                options: {
-                    minimize: true
-                }
-            },
-            {
-                test: /\.css$/,
-                use: [{
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            publicPath: '../'
-                        }
-                    },
-                    'css-loader',
-                ]
-            },
-            {
-                test: /\.less$/,
-                use: [{
-                    loader: MiniCssExtractPlugin.loader // creates style nodes from JS strings
-                }, {
-                    loader: 'css-loader' // translates CSS into CommonJS
-                }, {
-                    loader: 'less-loader' // compiles Less to CSS
-                }]
-            },
-            {
-                test: /\.(png|jpg|ttf|eot)$/,
-                exclude: /node_modules/,
-                loader: 'url-loader?limit=10000'
-            }
-
-        ]
-    },
     optimization: {
         minimize: true,
         //to create separate bundle of libraries so that they are cached separately.
@@ -91,4 +37,4 @@ export default {
         },
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
     }
-};
+});
