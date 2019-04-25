@@ -1,17 +1,29 @@
 import path from 'path';
+import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 
 export default {
+    target: "web",
     entry: {
         libs: path.resolve(__dirname, 'src/libs'),
-        main: path.resolve(__dirname, 'src/index')
+        main: path.resolve(__dirname, 'src/index'),
+        vendor: [
+            "jquery",
+            "bootstrap"
+        ]
     },
     plugins: [
-        new HtmlWebpackPlugin({ // Also generate a test.html
+        new HtmlWebpackPlugin({ 
             template: './src/index.html',
             inject: 'body',
+        }),
+        // make sure we allow any jquery usages outside of our webpack modules
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
         })
     ],
     module: {

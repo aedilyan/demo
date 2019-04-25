@@ -1,3 +1,4 @@
+import webpack from 'webpack';
 import merge from 'webpack-merge';
 import common from './webpack.config.common';
 import WebpackMD5Hash from 'webpack-md5-hash';
@@ -19,7 +20,12 @@ export default merge(common, {
             chunkFilename: '[id].[hash].css',
         }),
         //hash the file using MD5 so that their name change when the code changes
-        new WebpackMD5Hash()
+        new WebpackMD5Hash(),
+        new webpack.DefinePlugin({
+            "process.env": {
+                "NODE_ENV": JSON.stringify("production")
+            }
+        })
     ],
     optimization: {
         minimize: true,
