@@ -7,8 +7,7 @@
         "open:src": "babel-node buildScripts/srcServer.js",
         "lint": "esw webpack.config.* src buildScripts --color",
         "lint:watch": "npm run lint -- --watch",
-        "clean-dist": "rimraf ./dist && mkdir dist",
-        "prebuild": "npm-run-all clean-dist lint",
+        "prebuild": "npm-run-all lint",
         "build": "babel-node buildScripts/build.js",
         "postbuild": "babel-node buildScripts/distServer.js"
     },
@@ -29,6 +28,7 @@
         "babel-register": "^6.26.0",
         "chalk": "^2.4.2",
         "compression": "^1.7.4",
+        "clean-webpack-plugin": "^0.1.16",
         "css-loader": "^2.1.1",
         "eslint": "^5.16.0",
         "eslint-plugin-import": "^2.16.0",
@@ -56,5 +56,10 @@
         "webpack-dev-server": "^3.3.1",
         "webpack-md5-hash": "0.0.6",
         "webpack-merge": "^4.2.1"
+    },
+    "-vs-binding": {
+        "BeforeBuild": [
+          "build"
+        ]
     }
 }

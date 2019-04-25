@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 
 export default {
@@ -15,7 +16,7 @@ export default {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({ 
+        new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: 'body',
         }),
@@ -24,7 +25,11 @@ export default {
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery"
-        })
+        }),
+        // Clean dist folder.
+        new CleanWebpackPlugin(["./dist"], {
+            "verbose": true 
+        }),
     ],
     module: {
         rules: [{
