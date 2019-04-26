@@ -27,8 +27,8 @@
         "babel-preset-react": "^6.24.1",
         "babel-register": "^6.26.0",
         "chalk": "^2.4.2",
-        "compression": "^1.7.4",
         "clean-webpack-plugin": "^0.1.16",
+        "compression": "^1.7.4",
         "css-loader": "^2.1.1",
         "eslint": "^5.16.0",
         "eslint-plugin-import": "^2.16.0",
@@ -52,6 +52,7 @@
         "terser-webpack-plugin": "^1.2.3",
         "url-loader": "^1.1.2",
         "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.1",
         "webpack-dev-middleware": "^3.6.2",
         "webpack-dev-server": "^3.3.1",
         "webpack-md5-hash": "0.0.6",
@@ -59,7 +60,7 @@
     },
     "-vs-binding": {
         "BeforeBuild": [
-          "build"
+            "build"
         ]
     }
 }

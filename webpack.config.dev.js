@@ -14,7 +14,8 @@ export default merge(common, {
         publicPath: '/'
     },
     devServer: {
-        contentBase: './static',
+        watchContentBase: true,
+        contentBase: '/src',
         hot: true
     },
     plugins: [

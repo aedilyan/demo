@@ -18,6 +18,7 @@ export default {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
+            //filename: '../static/index2.html',
             inject: 'body',
         }),
         // make sure we allow any jquery usages outside of our webpack modules
